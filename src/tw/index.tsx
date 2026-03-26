@@ -90,18 +90,19 @@ export const AnimatedScrollView = (
     contentContainerClassName?: string;
   }
 ) => {
-  return useCssElement(Animated.ScrollView, props, {
+  return useCssElement(Animated.ScrollView as any, props as any, {
     className: "style",
     contentClassName: "contentContainerStyle",
     contentContainerClassName: "contentContainerStyle",
-  });
+  }) as any;
 };
 
 // TouchableHighlight with underlayColor extraction
 function XXTouchableHighlight(
   props: React.ComponentProps<typeof RNTouchableHighlight>
 ) {
-  const { underlayColor, ...style } = StyleSheet.flatten(props.style) || {};
+  const flattenedStyle = StyleSheet.flatten(props.style) || {};
+  const { underlayColor, ...style } = flattenedStyle as any;
   return (
     <RNTouchableHighlight
       underlayColor={underlayColor}

@@ -1,9 +1,9 @@
-import { View, Text } from '@/tw';
+import React from "react";
 
-export default function ProfileScreen() {
+export default function profile() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold">Profile Tab</Text>
-    </View>
+    <div>
+      <h1>Profile</h1>
+    </div>
   );
 }

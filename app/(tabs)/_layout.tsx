@@ -1,33 +1,44 @@
-import { IconSymbol } from '@/app-example/components/ui/icon-symbol';
-import { Tabs } from 'expo-router';
-import React from 'react';
-
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { Tabs } from "expo-router";
+import React from "react";
 export default function TabLayout() {
-
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Tabs.Screen
-        name="home"
+        name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="home-outline" size={24} color="black" />
+          ),
         }}
       />
       <Tabs.Screen
         name="createService"
         options={{
-          title: 'Create Service',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="plus" color={color} />,
+          title: "Create Service",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome6 name="add" size={24} color="black" />
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
+          title: "Profile",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="professional-hexagon"
+              size={24}
+              color="black"
+            />
+          ),
         }}
       />
     </Tabs>

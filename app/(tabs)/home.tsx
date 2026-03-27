@@ -1,9 +1,9 @@
-import { View, Text } from '@/tw';
+import React from "react";
 
-export default function HomeScreen() {
+export default function home() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold">Home Tab</Text>
-    </View>
+    <div>
+      <h1>Home</h1>
+    </div>
   );
 }

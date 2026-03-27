@@ -1,9 +1,10 @@
-import { View, Text } from '@/tw';
+import React from "react";
+import { TouchableOpacity } from "react-native";
 
-export default function CreateServiceScreen() {
+export default function createService() {
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold">Create Service Tab</Text>
-    </View>
+    <div>
+      <h1>Create Service</h1>
+    </div>
   );
 }

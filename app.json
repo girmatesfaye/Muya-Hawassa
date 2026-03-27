@@ -11,6 +11,9 @@
     "ios": {
       "supportsTablet": true
     },
+    "web": {
+      "bundler": "metro"
+    },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",

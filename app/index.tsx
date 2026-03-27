@@ -1,5 +1,6 @@
-import { View, Text } from "@/tw";
 import { Button } from "@/components/ui/button";
+import { Text, View } from "@/tw";
+import { router } from "expo-router";
 
 export default function Index() {
   return (
@@ -9,7 +10,7 @@ export default function Index() {
       </Text>
       <View className="gap-4 w-full max-w-sm mt-4 p-6 border border-gray-200 rounded-2xl shadow-sm">
         <Text className="text-base text-gray-500 font-semibold mb-2">Shadcn UI + NativeWind v5</Text>
-        <Button title="Default Button" onPress={() => console.log('hello')} />
+        <Button title="Go to Tabs" onPress={() => router.push('/(tabs)/home')} />
         <Button variant="secondary" title="Secondary Action" />
         <Button variant="outline" title="Outline Style" />
       </View>

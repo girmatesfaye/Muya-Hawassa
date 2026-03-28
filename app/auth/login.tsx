@@ -13,6 +13,7 @@ import {
   InfoCard,
   PasswordInput,
 } from "@/src/components/shared/auth-form";
+import { useSession } from "@/src/providers/session-provider";
 
 const accountTypes = [
   { label: "Client", value: "Client" },
@@ -20,6 +21,7 @@ const accountTypes = [
 ] as const;
 
 export default function LoginScreen() {
+  const { signIn } = useSession();
   const [accountType, setAccountType] =
     useState<(typeof accountTypes)[number]["value"]>("Client");
   const [identifier, setIdentifier] = useState("");
@@ -34,6 +36,10 @@ export default function LoginScreen() {
         primaryLabel="Sign In"
         secondaryText="Don't have an account?"
         secondaryActionLabel="Sign Up"
+        onPrimaryPress={() => {
+          signIn(accountType.toLowerCase() as "client" | "worker");
+          router.replace("/(tabs)/home");
+        }}
         onSecondaryPress={() => router.push("/auth/signup")}
       >
         <AuthTopBar title="Welcome Back" />

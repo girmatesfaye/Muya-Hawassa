@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Stack, router } from "expo-router";
 import { useState } from "react";
 import { Text, View } from "react-native";
 
@@ -15,6 +15,7 @@ import {
   PhoneInput,
   SelectShell,
 } from "@/src/components/shared/auth-form";
+import { useSession } from "@/src/providers/session-provider";
 
 const serviceAreas = [
   { label: "Tabor", value: "Tabor" },
@@ -23,6 +24,7 @@ const serviceAreas = [
 ] as const;
 
 export default function ClientRegisterScreen() {
+  const { signIn } = useSession();
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -39,6 +41,11 @@ export default function ClientRegisterScreen() {
         primaryLabel="Create My Account"
         secondaryText="Already have an account?"
         secondaryActionLabel="Log In"
+        onPrimaryPress={() => {
+          signIn("client", fullName);
+          router.replace("/(tabs)/home");
+        }}
+        onSecondaryPress={() => router.push("/auth/login")}
       >
         <AuthTopBar title="Client Registration" />
 

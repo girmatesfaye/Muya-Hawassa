@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Stack, router } from "expo-router";
 import { useState } from "react";
 import { Text, View } from "react-native";
 
@@ -16,6 +16,7 @@ import {
   SelectShell,
   TagSelector,
 } from "@/src/components/shared/auth-form";
+import { useSession } from "@/src/providers/session-provider";
 
 const skills = [
   { label: "Plumbing", value: "Plumbing" },
@@ -32,6 +33,7 @@ const levels = [
 ] as const;
 
 export default function WorkerRegisterScreen() {
+  const { signIn } = useSession();
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -50,6 +52,11 @@ export default function WorkerRegisterScreen() {
         primaryLabel="Register & Verify"
         secondaryText="Already have an account?"
         secondaryActionLabel="Log In"
+        onPrimaryPress={() => {
+          signIn("worker", fullName);
+          router.replace("/(tabs)/home");
+        }}
+        onSecondaryPress={() => router.push("/auth/login")}
       >
         <AuthTopBar title="Worker Registration" />
 

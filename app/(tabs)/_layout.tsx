@@ -8,7 +8,18 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
+        tabBarActiveTintColor: "#1450D2",
+        tabBarInactiveTintColor: "#94A3B8",
+        tabBarStyle: {
+          height: 72,
+          paddingTop: 10,
+          paddingBottom: 10,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: "700",
+        },
       }}
     >
       <Tabs.Screen
@@ -16,7 +27,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => (
-            <Ionicons name="home-outline" size={24} color="black" />
+            <Ionicons name="home-outline" size={24} color={color} />
           ),
         }}
       />
@@ -25,7 +36,7 @@ export default function TabLayout() {
         options={{
           title: "Create Service",
           tabBarIcon: ({ color }) => (
-            <FontAwesome6 name="add" size={24} color="black" />
+            <FontAwesome6 name="add" size={20} color={color} />
           ),
         }}
       />
@@ -37,7 +48,7 @@ export default function TabLayout() {
             <MaterialCommunityIcons
               name="professional-hexagon"
               size={24}
-              color="black"
+              color={color}
             />
           ),
         }}

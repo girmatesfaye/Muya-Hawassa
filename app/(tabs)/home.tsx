@@ -1,12 +1,6 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { Text } from "react-native";
 
-export default function home() {
-  return (
-    <div>
-      <TouchableOpacity>
-        <h1>Home</h1>
-      </TouchableOpacity>
-    </div>
-  );
+export default function HomeScreen() {
+  return <Text className="text-red-400">Home Screen</Text>;
 }

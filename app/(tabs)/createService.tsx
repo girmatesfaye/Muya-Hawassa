@@ -1,12 +1,10 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
-export default function createService() {
+export default function CreateServiceScreen() {
   return (
-    <div>
-      <TouchableOpacity>
-        <h1>createService</h1>
-      </TouchableOpacity>
-    </div>
+    <TouchableOpacity>
+      <Text>createService</Text>
+    </TouchableOpacity>
   );
 }

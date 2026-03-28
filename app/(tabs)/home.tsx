@@ -1,9 +1,12 @@
 import React from "react";
+import { TouchableOpacity } from "react-native";
 
 export default function home() {
   return (
     <div>
-      <h1>Home</h1>
+      <TouchableOpacity>
+        <h1>Home</h1>
+      </TouchableOpacity>
     </div>
   );
 }

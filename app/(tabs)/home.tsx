@@ -1,6 +1,11 @@
+import { Link } from "expo-router";
 import React from "react";
-import { Text } from "react-native";
+import { View } from "react-native";
 
 export default function HomeScreen() {
-  return <Text className="text-red-400">Home Screen</Text>;
+  return (
+    <View>
+      <Link href="/auth/signup">About</Link>
+    </View>
+  );
 }

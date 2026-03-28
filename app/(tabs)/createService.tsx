@@ -1,10 +1,11 @@
+import { Link } from "expo-router";
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 
 export default function CreateServiceScreen() {
   return (
-    <TouchableOpacity>
-      <Text>createService</Text>
-    </TouchableOpacity>
+    <View>
+      <Link href="/auth/login">Login</Link>
+    </View>
   );
 }

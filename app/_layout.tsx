@@ -13,6 +13,10 @@ export default function RootLayout() {
     <SessionProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="worker/edit-profile"
+          options={{ headerShown: false }}
+        />
       </Stack>
     </SessionProvider>
   );
